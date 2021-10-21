@@ -2,8 +2,6 @@ import React from "react";
 import SearchForm from "../components/SearchForm";
 import Filter from "../components/Filter";
 import CocktailList from "../components/CocktailList";
-import Loading from "../components/Loading";
-import { useGlobalContext } from "../context";
 
 const Home = () => {
   return (

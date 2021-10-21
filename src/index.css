@@ -47,6 +47,7 @@ nav {
   background-color: white;
   color: black;
   border-radius: 8px;
+  margin-top: 60px;
   margin-bottom: 40px;
   box-shadow: var(--shadow);
 }
@@ -115,7 +116,6 @@ nav {
 .top-section {
   display: flex;
   margin-top: 70px;
-  margin-bottom: 60px;
   align-items: center;
 }
 
@@ -246,7 +246,6 @@ form {
 }
 
 .cocktail-info h2,
-h3,
 p {
   margin: 0;
   margin-bottom: 15px;
