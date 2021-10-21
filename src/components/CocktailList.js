@@ -11,19 +11,18 @@ const CocktailList = () => {
       {loading ? (
         <Loading />
       ) : cocktails.length < 1 ? (
-        <div className="title container">
-          <h3>No cocktail matched your search critrea</h3>
+        <div className="container">
+          <h1>No cocktail matched your search critrea</h1>
         </div>
       ) : (
-        <div>
-          {cocktails.map((cocktail) => {
-            return (
-              <div className="cards-wrapper">
-                <Cocktail key={cocktail.id} {...cocktail} />
-              </div>
-            );
-          })}
-        </div>
+        <>
+          <h1 className="title">Cocktails</h1>
+          <div className="card-wrapper">
+            {cocktails.map((cocktail) => {
+              return <Cocktail key={cocktail.id} {...cocktail} />;
+            })}
+          </div>
+        </>
       )}
     </section>
   );

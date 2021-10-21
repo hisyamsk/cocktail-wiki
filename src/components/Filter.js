@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { useGlobalContext } from "../context";
 
 const Filter = () => {
@@ -22,6 +22,10 @@ const Filter = () => {
     }
     setActive(!active);
   };
+
+  useEffect(() => {
+    setLastData([]);
+  }, [searchTerm]);
 
   return (
     <div className="filter-wrapper">

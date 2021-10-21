@@ -43,7 +43,6 @@ nav {
 }
 
 .main-section {
-  width: 85%;
   padding: 20px;
   background-color: white;
   color: black;
@@ -65,13 +64,26 @@ nav {
   cursor: pointer;
 }
 
+.btn-small {
+  padding: 6px 16px;
+  font-size: 14px;
+}
+
 .btn-primary {
   background-color: var(--purple);
   color: white;
 }
 
 .btn-primary:hover {
+  transition: 0.25s ease;
   opacity: 0.7;
+}
+
+.title {
+  text-align: center;
+  font-size: 36px;
+  margin-top: 15px;
+  margin-bottom: 35px;
 }
 
 .nav-container {
@@ -102,24 +114,20 @@ nav {
 
 .top-section {
   display: flex;
-  justify-content: space-between;
-  width: 100%;
   margin-top: 70px;
   margin-bottom: 60px;
   align-items: center;
 }
 
 form {
-  width: 40%;
 }
 
 .search-wrapper {
   height: 90px;
+  width: 450px;
   min-width: 300px;
-  width: 100%;
   background: white;
   padding: 20px;
-  padding-left: 40px;
   border-radius: 8px;
   box-shadow: var(--shadow);
   display: flex;
@@ -135,7 +143,7 @@ form {
 }
 
 .search-wrapper input {
-  width: 80%;
+  width: 90%;
   height: 30px;
   outline: none;
   border: 1px solid var(--darkViolet);
@@ -149,7 +157,7 @@ form {
 }
 
 .filter-wrapper {
-  width: 40%;
+  margin-left: 80px;
 }
 
 .filter-wrapper h2 {
@@ -159,7 +167,6 @@ form {
 
 .tag-container {
   display: flex;
-  width: 45%;
   justify-content: space-between;
 }
 
@@ -168,6 +175,10 @@ form {
   border-radius: 8px;
   padding: 6px 12px;
   cursor: pointer;
+}
+
+.tag-container .tag-purple {
+  margin-right: 30px;
 }
 
 .tag-purple {
@@ -182,6 +193,10 @@ form {
   transition: 0.25s ease;
 }
 
+.tag-purple:focus {
+  outline: 2px solid var(--darkViolet);
+}
+
 .tag-blue {
   background-color: var(--lightBlue);
   color: var(--blue);
@@ -192,4 +207,60 @@ form {
   color: var(--lightBlue);
   background-color: var(--blue);
   transition: 0.25s ease;
+}
+
+.tag-blue:focus {
+  outline: 2px solid var(--blue);
+}
+
+.card-wrapper {
+  display: grid;
+  column-gap: 2rem;
+  row-gap: 2rem;
+}
+
+@media screen and (min-width: 576px) {
+  .card-wrapper {
+    grid-template-columns: repeat(auto-fill, minmax(338.8px, 1fr));
+  }
+}
+
+.card-container {
+  box-shadow: var(--shadow);
+  transition: all 0.2s ease-in-out;
+}
+
+.card-container:hover {
+  transform: scale(1.05);
+}
+
+.card-container img {
+  height: 20rem;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 0.25rem;
+}
+
+.cocktail-info {
+  padding: 15px;
+}
+
+.cocktail-info h2,
+h3,
+p {
+  margin: 0;
+  margin-bottom: 15px;
+}
+
+.cocktail-info h2 {
+  font-size: 28px;
+  border-bottom: 1px solid black;
+}
+
+.alcoholic {
+  color: var(--darkViolet);
+}
+
+.non-alcoholic {
+  color: var(--blue);
 }
