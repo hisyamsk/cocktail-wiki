@@ -7,6 +7,7 @@ const AppProvider = ({ children }) => {
   const [loading, setLoading] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [cocktails, setCocktails] = useState([]);
+  const [lastData, setLastData] = useState([]);
 
   const fetchData = useCallback(async () => {
     try {
@@ -44,7 +45,15 @@ const AppProvider = ({ children }) => {
 
   return (
     <AppContext.Provider
-      value={{ searchTerm, setSearchTerm, loading, cocktails, setCocktails }}
+      value={{
+        searchTerm,
+        setSearchTerm,
+        loading,
+        cocktails,
+        setCocktails,
+        lastData,
+        setLastData,
+      }}
     >
       {children}
     </AppContext.Provider>

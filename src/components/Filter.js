@@ -2,13 +2,18 @@ import React, { useState, useRef, useEffect } from "react";
 import { useGlobalContext } from "../context";
 
 const Filter = () => {
-  const { searchTerm, setSearchTerm, cocktails, setCocktails } =
-    useGlobalContext();
-  const [active, setActive] = useState(false);
-  const [lastData, setLastData] = useState([]);
+  const {
+    searchTerm,
+    setSearchTerm,
+    cocktails,
+    setCocktails,
+    lastData,
+    setLastData,
+  } = useGlobalContext();
+  const [filtered, setFiltered] = useState(false);
 
   const filterCocktail = (type) => {
-    if (active) {
+    if (filtered) {
       setCocktails(lastData);
     } else {
       setLastData(cocktails);
@@ -20,16 +25,19 @@ const Filter = () => {
         setCocktails(filteredCocktails);
       }
     }
-    setActive(!active);
+    setFiltered(!filtered);
   };
 
   useEffect(() => {
-    setLastData([]);
+    if (cocktails) {
+      setLastData([cocktails]);
+    }
+    setFiltered(false);
   }, [searchTerm]);
 
   return (
     <div className="filter-wrapper">
-      <h2>Filter by</h2>
+      <h2>Filter by:</h2>
       <div className="tag-container">
         <button
           className="tag tag-purple"
