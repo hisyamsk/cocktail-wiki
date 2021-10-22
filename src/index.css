@@ -18,6 +18,12 @@ body {
   color: white;
 }
 
+img {
+  width: 100%;
+  display: block;
+  border-radius: 8px;
+}
+
 ul {
   list-style: none;
 }
@@ -34,6 +40,15 @@ a:hover {
 
 nav {
   background: var(--purple);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  margin: 0;
 }
 
 .container {
@@ -117,9 +132,6 @@ nav {
   display: flex;
   margin-top: 70px;
   align-items: center;
-}
-
-form {
 }
 
 .search-wrapper {
@@ -262,4 +274,48 @@ p {
 
 .non-alcoholic {
   color: var(--blue);
+}
+
+.drink {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  grid-gap: 3rem;
+  padding: 20px;
+}
+
+.drink h1 {
+  font-size: 34px;
+  font-weight: 800;
+  border-bottom: 1px solid black;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
+
+.drink h1 > span {
+  font-weight: 500;
+}
+
+.drink p {
+  margin-bottom: 5px;
+}
+
+.drink p > span {
+  font-weight: bold;
+}
+
+.drink ul {
+  margin: 5px 0;
+  padding-left: 24px;
+  list-style: circle;
+}
+
+.drink-details {
+  font-size: 18px;
+  padding-right: 15px;
+}
+
+@media (max-width: 800px) {
+  .drink {
+    grid-template-columns: 1fr;
+  }
 }
