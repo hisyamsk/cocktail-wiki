@@ -305,13 +305,18 @@ p {
 
 .drink ul {
   margin: 5px 0;
-  padding-left: 24px;
+  padding-left: 40px;
   list-style: circle;
+  font-size: 16px;
 }
 
 .drink-details {
-  font-size: 18px;
+  font-size: 17px;
   padding-right: 15px;
+}
+
+.drink button {
+  margin-top: 20px;
 }
 
 @media (max-width: 800px) {

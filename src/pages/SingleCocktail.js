@@ -88,6 +88,9 @@ const SingleCocktail = () => {
                 <span>Instructions: </span>
                 {cocktail.instructions}
               </p>
+              <Link to="/">
+                <button className="btn btn-primary">Home</button>
+              </Link>
             </div>
           </div>
         </div>
