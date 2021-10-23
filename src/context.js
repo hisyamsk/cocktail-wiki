@@ -29,6 +29,7 @@ const AppProvider = ({ children }) => {
           };
         });
         setCocktails(newCocktails);
+        setLastData(newCocktails);
       } else {
         setCocktails([]);
       }

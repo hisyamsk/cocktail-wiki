@@ -2,31 +2,32 @@ import React, { useState, useEffect } from "react";
 import { useGlobalContext } from "../context";
 
 const Filter = () => {
-  const { searchTerm, cocktails, setCocktails, lastData, setLastData } =
-    useGlobalContext();
-  const [filtered, setFiltered] = useState(false);
+  const {
+    searchTerm,
+    setSearchTerm,
+    cocktails,
+    setCocktails,
+    lastData,
+    setLastData,
+  } = useGlobalContext();
+
+  const resetFilter = () => {
+    setCocktails(lastData);
+  };
 
   const filterCocktail = (type) => {
-    if (filtered) {
-      setCocktails(lastData);
-    } else {
-      setLastData(cocktails);
-      const filteredCocktails = cocktails.filter(
-        (cocktail) =>
-          cocktail.type === type || cocktail.type === "Optional alcohol"
-      );
-      if (filteredCocktails) {
-        setCocktails(filteredCocktails);
-      }
+    const filteredCocktails = lastData.filter(
+      (cocktail) =>
+        cocktail.type === type || cocktail.type === "Optional alcohol"
+    );
+
+    if (filteredCocktails) {
+      setCocktails(filteredCocktails);
     }
-    setFiltered(!filtered);
   };
 
   useEffect(() => {
-    if (cocktails) {
-      setLastData([cocktails]);
-    }
-    setFiltered(false);
+    setLastData(cocktails);
   }, [searchTerm]);
 
   return (
@@ -44,6 +45,9 @@ const Filter = () => {
           onClick={() => filterCocktail("Non alcoholic")}
         >
           Non-Alcoholic
+        </button>
+        <button className="tag tag-green" onClick={resetFilter}>
+          Reset Filter
         </button>
       </div>
     </div>

@@ -11,8 +11,8 @@ const CocktailList = () => {
       {loading ? (
         <Loading />
       ) : cocktails.length < 1 ? (
-        <div className="container">
-          <h1>No cocktail matched your search critrea</h1>
+        <div className="title container">
+          <h4>No cocktail matched your search critrea</h4>
         </div>
       ) : (
         <>

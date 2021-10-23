@@ -2,11 +2,10 @@ import React from "react";
 import { useGlobalContext } from "../context";
 
 const SearchForm = () => {
-  const { setSearchTerm, setLastData } = useGlobalContext();
+  const { setSearchTerm } = useGlobalContext();
 
   const handleChange = (e) => {
     setSearchTerm(e.target.value);
-    setLastData([]);
   };
 
   return (

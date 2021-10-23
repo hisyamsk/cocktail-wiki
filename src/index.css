@@ -54,11 +54,10 @@ p {
 .container {
   margin: auto;
   width: 85vw;
-  max-width: 1170px;
+  max-width: 1224px;
 }
 
 .main-section {
-  padding: 20px;
   background-color: white;
   color: black;
   border-radius: 8px;
@@ -98,8 +97,7 @@ p {
 .title {
   text-align: center;
   font-size: 36px;
-  margin-top: 15px;
-  margin-bottom: 35px;
+  padding: 15px 0;
 }
 
 .nav-container {
@@ -129,15 +127,16 @@ p {
 }
 
 .top-section {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 60px;
   margin-top: 70px;
   align-items: center;
 }
 
 .search-wrapper {
+  max-width: 500px;
   height: 90px;
-  width: 450px;
-  min-width: 300px;
   background: white;
   padding: 20px;
   border-radius: 8px;
@@ -168,10 +167,6 @@ p {
   box-shadow: 1px 1px 4px 1px rgba(155, 120, 168, 0.35);
 }
 
-.filter-wrapper {
-  margin-left: 80px;
-}
-
 .filter-wrapper h2 {
   margin: 0;
   margin-bottom: 16px;
@@ -179,7 +174,7 @@ p {
 
 .tag-container {
   display: flex;
-  justify-content: space-between;
+  gap: 12px;
 }
 
 .tag {
@@ -187,16 +182,12 @@ p {
   border-radius: 8px;
   padding: 6px 12px;
   cursor: pointer;
-}
-
-.tag-container .tag-purple {
-  margin-right: 30px;
+  box-shadow: var(--shadow);
 }
 
 .tag-purple {
   background-color: var(--violet);
   color: var(--darkViolet);
-  box-shadow: var(--shadow);
 }
 
 .tag-purple:hover {
@@ -212,7 +203,6 @@ p {
 .tag-blue {
   background-color: var(--lightBlue);
   color: var(--blue);
-  box-shadow: var(--shadow);
 }
 
 .tag-blue:hover {
@@ -225,10 +215,26 @@ p {
   outline: 2px solid var(--blue);
 }
 
+.tag-green {
+  background-color: #92d1b5;
+  color: #597c6d;
+}
+
+.tag-green:hover {
+  color: #92d1b5;
+  background-color: #597c6d;
+  transition: 0.25s ease;
+}
+
+.tag-green:focus {
+  outline: 2px solid #597c6d;
+}
+
 .card-wrapper {
   display: grid;
   column-gap: 2rem;
   row-gap: 2rem;
+  padding: 15px;
 }
 
 @media screen and (min-width: 576px) {
@@ -280,7 +286,7 @@ p {
   display: grid;
   grid-template-columns: 2fr 3fr;
   grid-gap: 3rem;
-  padding: 20px;
+  padding: 15px;
 }
 
 .drink h1 {
@@ -316,11 +322,43 @@ p {
 }
 
 .drink button {
-  margin-top: 20px;
+  margin: 15px 0;
 }
 
 @media (max-width: 800px) {
+  .card-container img {
+    height: 30rem;
+  }
+
   .drink {
     grid-template-columns: 1fr;
+    grid-gap: 1rem;
+  }
+
+  .top-section {
+    grid-template-columns: 1fr;
+    grid-gap: 30px;
+  }
+}
+
+@media (max-width: 525px) {
+  .container {
+    width: 95vw;
+  }
+
+  .nav-container {
+    flex-direction: column;
+  }
+
+  .main-section {
+    padding: 0px;
+  }
+
+  .card-wrapper {
+    padding: 5px;
+  }
+
+  .card-container img {
+    height: 20rem;
   }
 }
