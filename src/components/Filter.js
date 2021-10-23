@@ -1,15 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useGlobalContext } from "../context";
 
 const Filter = () => {
-  const {
-    searchTerm,
-    setSearchTerm,
-    cocktails,
-    setCocktails,
-    lastData,
-    setLastData,
-  } = useGlobalContext();
+  const { searchTerm, cocktails, setCocktails, lastData, setLastData } =
+    useGlobalContext();
 
   const resetFilter = () => {
     setCocktails(lastData);
