@@ -24,6 +24,10 @@ img {
   border-radius: 8px;
 }
 
+button {
+  cursor: pointer;
+}
+
 ul {
   list-style: none;
 }
@@ -76,7 +80,6 @@ p {
   font-size: 16px;
   border: none;
   border-radius: 5px;
-  cursor: pointer;
 }
 
 .btn-small {
@@ -124,6 +127,7 @@ p {
   width: 660px;
   margin: 40px auto;
   text-align: justify;
+  color: black;
 }
 
 .top-section {
@@ -289,7 +293,7 @@ p {
   padding: 15px;
 }
 
-.drink h1 {
+.title-main {
   font-size: 34px;
   font-weight: 800;
   border-bottom: 1px solid black;
@@ -323,6 +327,41 @@ p {
 
 .drink button {
   margin: 15px 0;
+}
+
+.tabs-container {
+  display: grid;
+  padding: 30px;
+  grid-template-columns: 1fr 3fr;
+  margin: 60px 0;
+}
+
+.tabs {
+  margin-right: 50px;
+  background-color: white;
+  color: black;
+  padding: 20px;
+  box-shadow: var(--shadow);
+  border-radius: 8px;
+}
+
+.tabs-title {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--purple);
+  font-size: 16px;
+  background-color: white;
+}
+
+.tabs-active,
+.tabs-title:hover {
+  transition: 0.2s ease;
+  color: white;
+  background-color: var(--purple);
+}
+
+.tabs-details {
+  width: 90%;
 }
 
 @media (max-width: 800px) {

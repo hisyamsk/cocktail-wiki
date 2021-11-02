@@ -1,18 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
+import data from "../localData/aboutData";
 
 const About = () => {
+  const [value, setValue] = useState(0);
+  const [active, setActive] = useState(false);
+  const { name, info } = data[value];
+
+  const handleClick = (index) => {
+    setValue(index);
+    setActive(true);
+  };
+
   return (
-    <section>
-      <div className="container">
-        <div className="about">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit
-            repudiandae eveniet nam voluptatem aliquid debitis, voluptatum
-            cupiditate sunt aperiam? In, quisquam nisi illo laborum nam ratione
-            voluptatem rem. Lorem ipsum dolor sit amet consectetur adipisicing
-            elit. Libero a quibusdam tempore animi repellat voluptatem nesciunt
-            ipsum eum sunt cupiditate?
-          </p>
+    <section className="container">
+      <div className="tabs-container">
+        <div className="tabs">
+          {data.map((singleData, index) => {
+            return (
+              <button
+                className={`tabs-title ${index === value ? "tabs-active" : ""}`}
+                key={index}
+                onClick={() => handleClick(index)}
+              >
+                {singleData.name}
+              </button>
+            );
+          })}
+        </div>
+        <div className="tabs tabs-details">
+          <h1 className="title-main">{name}</h1>
+          <p>{info}</p>
         </div>
       </div>
     </section>

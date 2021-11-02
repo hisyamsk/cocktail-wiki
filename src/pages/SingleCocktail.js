@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useCallback } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import Loading from "../components/Loading";
 const url = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=";
 
@@ -64,7 +64,7 @@ const SingleCocktail = () => {
         <div className="drink">
           <img src={cocktail.image} alt={cocktail.name} />
           <div className="detail-wrapper">
-            <h1>
+            <h1 className="title-main">
               {cocktail.name} <span>({cocktail.type})</span>
             </h1>
             <div className="drink-details">
@@ -88,9 +88,9 @@ const SingleCocktail = () => {
                 <span>Instructions: </span>
                 {cocktail.instructions}
               </p>
-              <a href="/">
+              <Link to="/">
                 <button className="btn btn-primary">Home</button>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
